@@ -1,29 +1,30 @@
-int main() {
-    string kata;
-    int i, j;
-    bool palindrome = true;
-	
-    cout << "Program Mengecek Kata dan Kalimat Palindrom" << endl;
+int main() 
+{
+string kata;
+int i, j;
+bool palindrome = true;
+
+cout << "Program Mengecek Kata dan Kalimat Palindrom" << endl;
     
-    // Input Kata
-    cout << "Input Kata : ";
-    getline(cin, kata);
-    j = kata.length();
+// Input Kata
+cout << "Input Kata : ";
+getline(cin, kata);
+j = kata.length();
 
-    // Cek Palindrom
-    for(i = 0; i < j; i++) 
-    {
-		if(kata[i] != kata[j-i-1]) 
+// Cek Palindrom
+for(i = 0; i < j; i++) 
+{
+	if(kata[i] != kata[j-i-1]) 
         {
-			palindrome = false;
-			break;
-		}
+		palindrome = false;
+		break;
 	}
+}
 
-    if(palindrome == true)
+if(palindrome == true)
         cout << "Hasil : Palindrom";
-    else
+else
         cout << "Hasil : Bukan Palindrom";
     
-    return 0;
+return 0;
 }
