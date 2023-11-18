@@ -1,0 +1,21 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+int main(){
+
+ char kalimat[100];
+ cout<<"Masukan Kalimat :"; cin.getline (kalimat,sizeof (kalimat));
+ 
+ int x = strlen(kalimat);
+     for(int i=x-1;i>=-1;i--){ //cek dari huruf paling belakang kalimat
+          if(kalimat[i]==' ' || i<0){
+               int j = i;
+                while(j+1<=x){ //cetak dari huruf terdepan kata
+                     cout<<kalimat[j+1];
+                     j++;
+                }
+           x = x-(x-i); //mengurangi kalimat dengan jumlah kata yang sudah di cetak
+          } 
+     }
+}
