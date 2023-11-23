@@ -1,0 +1,35 @@
+// converting decimal to hexadecimal in c++
+#include <bits/stdc++.h>
+using namespace std;
+// function to convert decimal to hexadecimal in c++
+string convertHexa(int number)
+{
+    string hexa;
+    // loop till number>0
+    while (number)
+    {
+        int rem = number % 16;
+        // when rem is less than 10 then store 0-9
+        // else store A - F
+        if (rem < 10)
+            hexa.push_back(rem + '0');
+        else
+            hexa.push_back(rem - 10 + 'A');
+
+        number = number / 16;
+    }
+    reverse(hexa.begin(), hexa.end());
+    return hexa;
+}
+// drive code
+int main()
+{
+    int number; // store decimal number
+    cin >> number;
+
+    string hexa; // store hexadecimal
+    // calling function to convert decimal to hexadecimal in c++
+    hexa = convertHexa(number);
+    // printing hexadecimal;
+    cout << hexa << endl;
+}
